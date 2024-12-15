@@ -1,101 +1,220 @@
-import Image from "next/image";
+import Image from "next/image"; // Импорт компонента Image из Next.js
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <main style={{ backgroundColor: "#1E1E1E", color: "white", minHeight: "100vh", padding: "16px" }}>
+      {/* Контейнер для центрирования контента */}
+      <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+        
+        {/* Хедер: Карточка с изображением */}
+        <header style={{ marginBottom: "40px", textAlign: "center" }}>
+          <div
+            style={{
+              backgroundColor: "#2D2D2D",
+              padding: "12px",
+              borderRadius: "12px",
+              boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
+            }}
           >
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/images/новости недели.png" // Путь к изображению
+              alt="Главные новости недели"
+              width={1600}
+              height={400} // Делаем изображение тонким и длинным
+              style={{ width: "100%", height: "auto", borderRadius: "12px" }}
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+          </div>
+        </header>
+
+        {/* Разделы: Статьи, Интервью, Альбомы, Треки */}
+        <section style={{ marginBottom: "40px" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "16px" }}>
+            <div style={{ textAlign: "center", width: "23%" }}>
+              <Image
+                src="/images/статьи.png"
+                alt="Статьи"
+                width={100}
+                height={100}
+                style={{ width: "100%", height: "auto", borderRadius: "8px" }}
+              />
+              <h3 style={{ fontSize: "18px", fontWeight: "bold", marginTop: "8px" }}>Статьи</h3>
+              <p style={{ color: "#aaa" }}>Последние новости и интересные статьи</p>
+            </div>
+            <div style={{ textAlign: "center", width: "23%" }}>
+              <Image
+                src="/images/интервью.png"
+                alt="Интервью"
+                width={100}
+                height={100}
+                style={{ width: "100%", height: "auto", borderRadius: "8px" }}
+              />
+              <h3 style={{ fontSize: "18px", fontWeight: "bold", marginTop: "8px" }}>Интервью</h3>
+              <p style={{ color: "#aaa" }}>Топ интервью этой недели</p>
+            </div>
+            <div style={{ textAlign: "center", width: "23%" }}>
+              <Image
+                src="/images/альбомы.png"
+                alt="Альбомы"
+                width={100}
+                height={100}
+                style={{ width: "100%", height: "auto", borderRadius: "8px" }}
+              />
+              <h3 style={{ fontSize: "18px", fontWeight: "bold", marginTop: "8px" }}>Альбомы</h3>
+              <p style={{ color: "#aaa" }}>Новые альбомы и релизы</p>
+            </div>
+            <div style={{ textAlign: "center", width: "23%" }}>
+              <Image
+                src="/images/треки.png"
+                alt="Треки"
+                width={100}
+                height={100}
+                style={{ width: "100%", height: "auto", borderRadius: "8px" }}
+              />
+              <h3 style={{ fontSize: "18px", fontWeight: "bold", marginTop: "8px" }}>Треки</h3>
+              <p style={{ color: "#aaa" }}>Популярные треки недели</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Дополнительная карточка с изображением */}
+        <section style={{ marginBottom: "40px", textAlign: "center" }}>
+          <div
+            style={{
+              backgroundColor: "#2D2D2D",
+              padding: "12px",
+              borderRadius: "12px",
+              boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
+              marginTop: "40px",
+            }}
           >
-            Read our docs
-          </a>
+            <Image
+              src="/images/Топ недели.png" // Путь к дополнительному изображению
+              alt="Дополнительная карточка"
+              width={1600}
+              height={400} // Делаем изображение тонким и длинным
+              style={{ width: "100%", height: "auto", borderRadius: "12px" }}
+            />
+          </div>
+        </section>
+
+        {/* Сетка 3x3 для 6 карточек с изображениями */}
+        <section style={{ marginBottom: "40px" }}>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(3, 1fr)", // 3 колонки
+              gap: "16px", // Добавление промежутков между карточками
+            }}
+          >
+            {/* Шесть карточек */}
+            {["Картинка1.png", "Картинка2.png", "Картинка3.png", "Картинка4.png", "Картинка5.png", "Картинка6.png"].map((img, index) => (
+              <div
+                key={index}
+                style={{
+                  backgroundColor: "#2D2D2D",
+                  padding: "16px",
+                  borderRadius: "12px",
+                  boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
+                  textAlign: "center",
+                }}
+              >
+                <Image
+                  src={`/images/${img}`}
+                  alt={`Карточка ${index + 1}`}
+                  width={350}
+                  height={200}
+                  style={{ width: "100%", height: "auto", borderRadius: "8px" }}
+                />
+                <h3 style={{ fontSize: "16px", fontWeight: "bold", marginTop: "12px", marginBottom: "8px" }}>
+                  Карточка {index + 1}
+                </h3>
+                <p style={{ color: "#aaa" }}>Описание карточки {index + 1}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Сетка карточек новостей */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr 1fr", // 3 колонки
+            gridTemplateRows: "1fr 1fr", // 2 строки
+            gap: "16px",
+          }}
+        >
+          {/* Четыре карточки в сетке 2x2 */}
+          {["Блок1.png", "Блок2.png", "Блок3.png", "Блок4.png"].map((img, index) => (
+            <div
+              key={index}
+              style={{
+                backgroundColor: "#2D2D2D",
+                padding: "16px",
+                borderRadius: "12px",
+                boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
+                textAlign: "center",
+              }}
+            >
+              <Image
+                src={`/images/${img}`}
+                alt={`Новина ${index + 1}`}
+                width={160}
+                height={90}
+                style={{ width: "100%", height: "auto", borderRadius: "8px" }}
+              />
+              <h3 style={{ fontSize: "16px", fontWeight: "bold", marginTop: "12px", marginBottom: "8px" }}>
+                Новина {index + 1}
+              </h3>
+              <p style={{ color: "#aaa" }}>Опис новини номер {index + 1}</p>
+            </div>
+          ))}
+
+          {/* Пятая карточка */}
+          <div
+            style={{
+              gridColumn: "3", // Третья колонка
+              gridRow: "1 / span 2", // Занимает весь правый столбец
+              backgroundColor: "#2D2D2D",
+              padding: "16px",
+              borderRadius: "12px",
+              boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
+              textAlign: "center",
+            }}
+          >
+            <Image
+              src={`/images/Блок5.png`}
+              alt={`П'ята новина`}
+              width={160}
+              height={90}
+              style={{ width: "100%", height: "auto", borderRadius: "8px" }}
+            />
+            <h3 style={{ fontSize: "16px", fontWeight: "bold", marginTop: "12px", marginBottom: "8px" }}>П'ята новина</h3>
+            <p style={{ color: "#aaa" }}>Це опис п'ятої новини, яка відображається в окремому стовпці.</p>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+
+        {/* Футер */}
+        <footer style={{ marginTop: "40px", textAlign: "center" }}>
+          <div
+            style={{
+              backgroundColor: "#2D2D2D",
+              padding: "24px",
+              borderRadius: "12px",
+              boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
+            }}
+          >
+            <Image
+              src="/images/футтер.png"
+              alt="Футер"
+              width={1600}
+              height={675}
+              style={{ width: "100%", height: "auto", borderRadius: "12px" }}
+            />
+            <h3 style={{ fontSize: "20px", fontWeight: "bold", marginTop: "16px", marginBottom: "8px" }}>.</h3>
+            <p style={{ color: "#aaa" }}>Це підсумок головних новин тижня</p>
+          </div>
+        </footer>
+      </div>
+    </main>
   );
 }
