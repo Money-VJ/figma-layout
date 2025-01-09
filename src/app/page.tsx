@@ -5,7 +5,7 @@ export default function Home() {
     <main style={{ backgroundColor: "#1E1E1E", color: "white", minHeight: "100vh", padding: "16px" }}>
       {/* Контейнер для центрирования контента */}
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-        
+        {/*.   */}
         {/* Хедер: Карточка с изображением */}
         <header style={{ marginBottom: "40px", textAlign: "center" }}>
           <div
